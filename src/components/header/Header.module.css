@@ -151,6 +151,8 @@
   position: relative;
   white-space: nowrap;
   user-select: none;
+  /* z-index context yaratish uchun */
+  isolation: isolate;
   transition:
     color 0.25s ease,
     background 0.25s ease,
@@ -165,27 +167,50 @@
   background: linear-gradient(135deg, var(--clr-accent), var(--clr-accent-2));
   opacity: 0;
   transition: opacity 0.25s ease;
+  /* z-index: -1 o'rniga isolation: isolate bilan ishlaydi */
   z-index: -1;
 }
-a{
+
+a {
   text-decoration: none;
 }
+
 .navItem:hover {
   color: var(--clr-text);
   background: var(--clr-hover-bg);
   box-shadow: 0 0 14px rgba(124, 106, 247, 0.15);
 }
 
+/* ─── ACTIVE — asosiy tuzatish ────────────────────── */
 .navItem.active {
-  color: #fff;
-  background: transparent;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  /* variables ishlamasa ham ishlashi uchun qattiq rang berildi */
+  background: linear-gradient(135deg, #7c6af7, #f97c6a) !important;
   box-shadow:
-    0 2px 18px rgba(124, 106, 247, 0.40),
-    0 0 0 1px rgba(124, 106, 247, 0.28) inset;
+    0 2px 18px rgba(124, 106, 247, 0.45),
+    0 0 0 1px rgba(124, 106, 247, 0.30) inset;
+  font-weight: 600;
 }
 
+/* active da ::before o'chirildi */
 .navItem.active::before {
-  opacity: 1;
+  display: none;
+}
+
+/* active hover */
+.navItem.active:hover {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  background: linear-gradient(135deg, #6b58f0, #f86a55) !important;
+  box-shadow: 0 4px 22px rgba(124, 106, 247, 0.55);
+}
+
+/* active qo'shni link bold bo'lib ketmasin */
+.navItem:not(.active) {
+  font-weight: 500;
+  color: var(--clr-muted);
+  background: transparent;
 }
 
 /* ─── Dark Mode Toggle ────────────────────────────── */
