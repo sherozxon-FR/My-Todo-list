@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ─── LAYOUT ─────────────────────────────────────────── */
+
+.container {
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    padding: 48px 32px;
+    color: #5c5d5f;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.title::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+.empty {
+    text-align: center;
+    color: #272a2e;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 80px 0;
+    letter-spacing: 0.3px;
+}
+
+/* ─── TABLE ──────────────────────────────────────────── */
+
+.tableWrapper {
+    overflow-x: auto;
+    /* border-radius: 16px; */
+    /* border: 1px solid #1e2535; */
+    /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead {
+    border-bottom: 1px solid #1e2535;
+}
+
+.table thead th {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #333435;
+}
+
+.table thead th:first-child {
+    padding-left: 24px;
+    width: 56px;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #1a2030;
+    transition: background 0.15s ease;
+    animation: fadeInUp 0.3s ease both;
+}
+
+.table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.table tbody tr:hover {
+    background: #242a33;
+}
+
+.table tbody tr:hover td {
+    color: #aeb1b4;
+}
+
+.table tbody td {
+    padding: 16px 20px;
+    font-size: 0.9rem;
+    color: #464646;
+    vertical-align: middle;
+}
+
+.table tbody td:first-child {
+    padding-left: 24px;
+    color: #7a7d81;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.table tbody td:nth-child(2) {
+    font-weight: 500;
+    color: #434447;
+}
+
+.table tbody td:nth-child(3) {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* animation delays */
+.table tbody tr:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.table tbody tr:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+.table tbody tr:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.table tbody tr:nth-child(4) {
+    animation-delay: 0.20s;
+}
+
+.table tbody tr:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+/* ─── BUTTONS ────────────────────────────────────────── */
+
+.editBtn {
+    background: transparent;
+    border: 1px solid #2d3f5e;
+    color: #60a5fa;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.editBtn:hover {
+    background: rgba(96, 165, 250, 0.12);
+    border-color: #60a5fa;
+    color: #ccdaea;
+}
+
+.deleteBtn {
+    background: transparent;
+    border: 1px solid #3d2535;
+    color: #f87171;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.deleteBtn:hover {
+    background: rgba(248, 113, 113, 0.12);
+    border-color: #f87171;
+    color: #fca5a5;
+}
+
+/* ─── CHECKBOX ───────────────────────────────────────── */
+
+.checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #2d3f5e;
+    border-radius: 6px;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.checkbox:checked {
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    border-color: transparent;
+}
+
+.checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.checkbox:hover {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.1);
+}
+
+/* ─── COMPLETED ROW ──────────────────────────────────── */
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.4;
+    filter: blur(2px);
+    transition: all 0.3s ease;
+}
+
+/* ─── MODAL ──────────────────────────────────────────── */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal {
+    background: #111827;
+    border: 1px solid #1e2535;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+    animation: slideUp 0.3s ease;
+    overflow: hidden;
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid #1e2535;
+}
+
+.modalTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    color: #4b5563;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.closeBtn:hover {
+    background: #1e2535;
+    color: #e2e8f0;
+}
+
+.modalBody {
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
+}
+
+.input {
+    background: #0d0f14;
+    border: 1px solid #1e2535;
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #e2e8f0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+.input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.5);
+    cursor: pointer;
+}
+
+.modalFooter {
+    display: flex;
+    gap: 12px;
+    padding: 20px 28px 24px;
+    border-top: 1px solid #1e2535;
+}
+
+.cancelBtn {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #1e2535;
+    color: #64748b;
+    padding: 12px;
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancelBtn:hover {
+    border-color: #334155;
+    color: #94a3b8;
+}
+
+.saveBtn {
+    flex: 1;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.saveBtn:hover {
+    opacity: 0.85;
+}
+
+/* ─── ANIMATIONS ─────────────────────────────────────── */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+
+@media (max-width: 600px) {
+    .container {
+        padding: 28px 16px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .table tbody td,
+    .table thead th {
+        padding: 12px 12px;
+    }
+}

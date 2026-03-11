@@ -1,0 +1,180 @@
+/* Completed.module.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+.container {
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 48px 32px;
+  color: #e2e8f0;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #4ade80, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 32px;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #4ade80, #22d3ee);
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.empty {
+  text-align: center;
+  color: #4b5563;
+  font-size: 1rem;
+  padding: 80px 0;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  /* border-radius: 16px; */
+  /* border: 1px solid #1e2535; */
+  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.table thead {
+  background: #ffffff;
+  border-bottom: 1px solid #1e2535;
+}
+
+.table thead th {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #000000;
+}
+
+.table thead th:first-child {
+  padding-left: 24px;
+  width: 56px;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #1a2030;
+  transition: background 0.15s ease;
+  animation: fadeInUp 0.3s ease both;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: #151d2b;
+  color: #e2e8f0;
+}
+
+.table tbody td {
+  padding: 16px 20px;
+  font-size: 0.9rem;
+  color: #212123;
+  vertical-align: middle;
+}
+
+.table tbody:hover td{
+  color: #eeeeef;
+}
+
+.table tbody td:first-child {
+  padding-left: 24px;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* bajarilgan vazifa nomi */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.4;
+  color: #64748b;
+}
+
+/* delete tugmasi */
+.table tbody td:last-child button {
+  background: transparent;
+  border: 1px solid #3d2535;
+  color: #f87171;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+}
+
+.table tbody td:last-child button:hover {
+  background: rgba(248, 113, 113, 0.12);
+  border-color: #f87171;
+  color: #fca5a5;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table tbody tr:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.table tbody tr:nth-child(2) {
+  animation-delay: 0.10s;
+}
+
+.table tbody tr:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.table tbody tr:nth-child(4) {
+  animation-delay: 0.20s;
+}
+
+.table tbody tr:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 28px 16px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .table tbody td,
+  .table thead th {
+    padding: 12px 12px;
+  }
+}

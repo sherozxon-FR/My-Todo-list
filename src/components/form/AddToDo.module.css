@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+.form {
+    font-family: 'Outfit', sans-serif;
+    background: #111827;
+    /* border: 1px solid #1e2535; */
+    border-radius: 20px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 90%;
+    /* ← 90% */
+}
+
+.label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
+}
+
+.input,
+.dateInput {
+    background: #0d0f14;
+    border: 1px solid #1e2535;
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #e2e8f0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    /* field ning 100% = forma ning 90% */
+    box-sizing: border-box;
+}
+
+.saveBtn {
+    width: 90%;
+    /* ← btn ham 90% */
+    /* ... qolgan stillari */
+}
+
+.input:focus,
+.dateInput:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+.input::placeholder {
+    color: #334155;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+    filter: invert(0.5);
+    cursor: pointer;
+}
+
+.saveBtn {
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    height: 46px;
+}
+
+.saveBtn:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+    .form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
