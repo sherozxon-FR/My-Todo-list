@@ -10,7 +10,9 @@ function Active() {
   const [editName, setEditName] = useState('')
   const [editDate, setEditDate] = useState('')
 
-  const activeTodos = todoList.filter(todo => !todo.completed)
+  const activeTodos = todoList.filter(todo => !todo.completed && !todo.Delete)
+
+
 
   const handleEdit = (todo) => {
     setEditingTodo(todo)

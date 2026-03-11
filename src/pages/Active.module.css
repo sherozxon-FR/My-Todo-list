@@ -47,15 +47,18 @@ body {
 .container {
     font-family: var(--font);
     min-height: 100vh;
-    padding: 48px 40px;
+    padding: 38px 20px;
+ 
     background: var(--color-bg);
     color: var(--color-text);
-    width: 100%;
+    width: 95%;
+    margin: 20px auto;
 }
 
 /* ─── TITLE ──────────────────────────────────────────── */
 
 .title {
+  
     font-size: 2rem;
     font-weight: 700;
     color: var(--color-text);

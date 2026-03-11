@@ -8,6 +8,10 @@
   background: #ffffff;
   padding: 48px 32px;
   color: #e2e8f0;
+   /* border: 5px solid #1e2535; */
+   width: 95%;
+    margin: 20px auto;
+
 }
 
 .title {
@@ -41,13 +45,14 @@
 .tableWrapper {
   overflow-x: auto;
   /* border-radius: 16px; */
-  /* border: 1px solid #1e2535; */
+  /* 5; */
   /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); */
+
 }
 
 .table {
-  width: 100%;
   border-collapse: collapse;
+  width: 95%;
   background: #ffffff;
 }
 

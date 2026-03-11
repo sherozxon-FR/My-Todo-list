@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+.wrapper {
+    --clr-accent: #7c6af7;
+    --clr-accent-2: #f97c6a;
+    --clr-text: #1a1830;
+    --clr-muted: rgba(26, 24, 48, 0.45);
+    --clr-border: rgba(0, 0, 0, 0.08);
+    --clr-row-hover: rgba(124, 106, 247, 0.05);
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    min-height: 100vh;
+    padding: 120px 40px 60px;
+    background: #f7f6ff;
+    font-family: var(--font-body);
+    animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ─── Page Header ─── */
+.pageHeader {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+}
+
+.iconBox {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--clr-accent), var(--clr-accent-2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(124, 106, 247, 0.30);
+    flex-shrink: 0;
+}
+
+.trashIcon {
+    width: 22px;
+    height: 22px;
+    color: #fff;
+}
+
+.title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.03em;
+    color: var(--clr-text);
+    margin: 0;
+}
+
+.badge {
+    margin-left: auto;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--clr-accent), var(--clr-accent-2));
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    box-shadow: 0 2px 10px rgba(124, 106, 247, 0.30);
+}
+
+/* ─── Table ─── */
+.tableWrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid var(--clr-border);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-body);
+}
+
+.table thead tr {
+    background: rgba(124, 106, 247, 0.06);
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.table th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+}
+
+.table td {
+    padding: 14px 20px;
+    font-size: 0.88rem;
+    color: var(--clr-text);
+    border-top: 1px solid var(--clr-border);
+}
+
+.row {
+    transition: background 0.2s ease;
+}
+
+.row:hover td {
+    background: var(--clr-row-hover);
+}
+
+.num {
+    color: var(--clr-muted) !important;
+    font-size: 0.78rem !important;
+    width: 48px;
+}
+
+.text {
+    text-decoration: line-through;
+    color: var(--clr-muted) !important;
+}
+
+
+
+/* ─── Empty ─── */
+.empty {
+    text-align: center;
+    color: var(--clr-muted);
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    margin-top: 60px;
+    letter-spacing: 0.01em;
+}
+
+/* ─── Animation ─── */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 520px) {
+    .wrapper {
+        padding: 100px 16px 40px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 10px 14px;
+    }
+}
+
+.statusBadge {
+    display: inline-flex;
+    align-items: center;
+}
+
+.statusBadge button {
+    padding: 6px 14px;
+    cursor: pointer;
+    border-radius: 999px;
+    border: 1px solid rgba(249, 124, 106, 0.40);
+    color: var(--clr-accent-2);
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    background: rgba(249, 124, 106, 0.07);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.statusBadge button:hover {
+    background: rgba(249, 124, 106, 0.15);
+    box-shadow: 0 2px 10px rgba(249, 124, 106, 0.20);
+}

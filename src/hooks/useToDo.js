@@ -11,7 +11,7 @@ export function useTodo() {
     // Yangi todo qo'shadi
     const addTodo = (name, date) => {
         setTodoList(prev => {
-            const updated = [...prev, { id: Date.now(), name, date, completed: false }]
+            const updated = [...prev, { id: Date.now(), Delete: false, name, date, completed: false }]
             localStorage.setItem('LIST', JSON.stringify(updated))
             return updated
         })
@@ -20,7 +20,9 @@ export function useTodo() {
     // Todoni o'chiradi
     const deleteTodo = (id) => {
         setTodoList(prev => {
-            const updated = prev.filter(todo => todo.id !== id)
+            const updated = prev.map((todo) =>
+                todo.id === id ? { ...todo, Delete: true } : todo
+            )
             localStorage.setItem('LIST', JSON.stringify(updated))
             return updated
         })

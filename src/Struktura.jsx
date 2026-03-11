@@ -3,6 +3,7 @@ import Main from "./components/main/Main";
 import Home from "./pages/Home";
 import Active from "./pages/Active";
 import Completed from "./pages/Completed";
+import Deleted from "./pages/Deleted";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
             {
                 path: "completed",
                 element: <Completed />,
+            },
+            {
+                path: "deleted",
+                element: <Deleted />,
             },
         ],
     },

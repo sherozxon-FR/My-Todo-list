@@ -1,30 +1,30 @@
-
 import styles from "./Header.module.css";
-import { Link } from "react-router-dom";
-
-
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
     { label: "Home", path: "/" },
-    { label: "Active", path: "/active" },
-    { label: "Completed", path: "/completed" },
+    { label: "Faol", path: "/active" },
+    { label: "Bajarilgan", path: "/completed" },
+    { label: "O'chirilgan", path: "/deleted" },
 ];
 
 function Header() {
-    return (
-        <header className={`${styles.header} `}>
-            <div className={styles.logo}>Todo App</div>
+    const { pathname } = useLocation();
 
+    return (
+        <header className={styles.header}>
+            <div className={styles.logo}>Todo App</div>
             <nav>
                 <ul className={styles.navList}>
                     {navLinks.map(({ label, path }) => (
-                        <Link
-                            key={label}
-                            to={path}
-                            className={`${styles.navItem} ${location.pathname === path ? styles.active : ""}`}
-                        >
-                            {label}
-                        </Link>
+                        <li key={path}>
+                            <Link
+                                to={path}
+                                className={`${styles.navItem} ${pathname === path ? styles.active : ""}`}
+                            >
+                                {label}
+                            </Link>
+                        </li>
                     ))}
                 </ul>
             </nav>

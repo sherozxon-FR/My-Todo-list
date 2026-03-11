@@ -5,7 +5,7 @@ function Completed() {
     const { todoList, deleteTodo } = useTodo()
 
     // faqat bajarilgan vazifalarni oladi
-    const completedTodos = todoList.filter(todo => todo.completed)
+const completedTodos = todoList.filter(todo => todo.completed && !todo.Delete)
 
     return (
         <div className={styles.container}>

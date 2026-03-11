@@ -6,6 +6,7 @@ function Main() {
     return (
         <div className={styles.main}>
             <Header />
+            <br /> <br /> <br />
             <Outlet />   
         </div>
     );

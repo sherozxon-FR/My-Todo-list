@@ -6,6 +6,7 @@ function AddToDo() {
   const { addTodo } = useTodo()
   const [name, setName] = useState('')
   const [date, setDate] = useState('')
+  // const [Delete, setDelete] = useState(true)
 
   const handleSubmit = (e) => {
     e.preventDefault()
