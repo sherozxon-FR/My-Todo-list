@@ -41,14 +41,13 @@
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
     width: 100%;
-    /* field ning 100% = forma ning 90% */
+   
     box-sizing: border-box;
 }
 
 .saveBtn {
     width: 90%;
-    /* ← btn ham 90% */
-    /* ... qolgan stillari */
+    
 }
 
 .input:focus,
