@@ -1,11 +1,13 @@
-import { useTodo } from '../hooks/useToDo'
+import { useTodo } from '../context/TodoContext'
 import styles from './Completed.module.css'
+
+import { useState } from 'react'
 
 function Completed() {
     const { todoList, deleteTodo } = useTodo()
 
     // faqat bajarilgan vazifalarni oladi
-const completedTodos = todoList.filter(todo => todo.completed && !todo.Delete)
+    const completedTodos = todoList.filter(todo => todo.completed && !todo.Delete)
 
     return (
         <div className={styles.container}>

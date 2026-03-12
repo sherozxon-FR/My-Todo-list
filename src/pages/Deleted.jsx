@@ -1,5 +1,5 @@
 import styles from './Deleted.module.css'
-import { useTodo } from '../hooks/useToDo'
+import { useTodo } from '../context/TodoContext'
 
 function Deleted() {
     const { todoList, arxivDelete } = useTodo()

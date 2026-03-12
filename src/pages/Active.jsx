@@ -1,7 +1,7 @@
 
 
 import { useState } from 'react'
-import { useTodo } from '../hooks/useToDo'
+import { useTodo } from '../context/TodoContext'
 import styles from './Active.module.css'
 
 function Active() {

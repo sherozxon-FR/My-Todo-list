@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styles from './AddToDo.module.css'
-import { useTodo } from '../../hooks/useToDo'
+import { useTodo } from '../../context/TodoContext'
 
 function AddToDo() {
   const { addTodo } = useTodo()

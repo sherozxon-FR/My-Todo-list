@@ -166,3 +166,28 @@ a {
     font-size: 0.78rem;
   }
 }
+
+/* Header.module.css ga qo'shing */
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: #6366f1;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 999px;
+  margin-left: 6px;
+  line-height: 1;
+  transition: background 0.2s ease;
+}
+
+/* Active link bo'lganda count rangi o'zgarsin */
+.navItem.active .count {
+  background: #f41313;
+  color: #6366f1;
+}
