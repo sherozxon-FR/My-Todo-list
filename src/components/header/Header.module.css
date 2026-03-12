@@ -15,7 +15,6 @@
   --font-body: 'DM Sans', sans-serif;
 
   position: fixed;
-  /* top: 0; */
   left: 0;
   right: 0;
   width: 95%;
@@ -60,6 +59,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   transition: filter 0.3s ease;
+  white-space: nowrap;
 }
 
 .logo::after {
@@ -88,8 +88,9 @@
 .navList {
   list-style: none;
   margin: 0;
-  padding: 14px;
+  padding: 8px;
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
   align-items: center;
   background: var(--clr-pill-bg);
@@ -109,6 +110,8 @@
   isolation: isolate;
   position: relative;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
   transition: color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -135,40 +138,7 @@ a {
   box-shadow: 0 4px 22px rgba(124, 106, 247, 0.55);
 }
 
-/* ─── Animation ─── */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ─── Responsive ─── */
-@media (max-width: 520px) {
-  .header {
-    margin: 10px 12px 0;
-    padding: 12px 18px;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .navList {
-    gap: 2px;
-  }
-
-  .navItem {
-    padding: 6px 12px;
-    font-size: 0.78rem;
-  }
-}
-
-/* Header.module.css ga qo'shing */
-
+/* ─── Count badge ─── */
 .count {
   display: inline-flex;
   align-items: center;
@@ -186,8 +156,140 @@ a {
   transition: background 0.2s ease;
 }
 
-/* Active link bo'lganda count rangi o'zgarsin */
 .navItem.active .count {
-  background: #f41313;
-  color: #6366f1;
+  background: rgba(255, 255, 255, 0.30);
+  color: #fff;
+}
+
+/* ─── Animation ─── */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE BREAKPOINTS
+═══════════════════════════════ */
+
+/* Tablet landscape — 1024px */
+@media (max-width: 1024px) {
+  .header {
+    padding: 12px 22px;
+    gap: 12px;
+  }
+
+  .navItem {
+    padding: 7px 14px;
+    font-size: 0.80rem;
+  }
+}
+
+/* Tablet portrait — 768px */
+@media (max-width: 768px) {
+  .header {
+    width: 92%;
+    padding: 12px 18px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navList {
+    width: 100%;
+    justify-content: center;
+    padding: 6px;
+    gap: 4px;
+  }
+
+  .navItem {
+    padding: 6px 13px;
+    font-size: 0.78rem;
+  }
+}
+
+/* Mobile large — 600px */
+@media (max-width: 600px) {
+  .header {
+    width: 90%;
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 16px;
+  }
+
+  .navItem {
+    padding: 6px 11px;
+    font-size: 0.76rem;
+  }
+
+  .count {
+    min-width: 17px;
+    height: 17px;
+    font-size: 10px;
+    padding: 0 5px;
+    margin-left: 4px;
+  }
+}
+
+/* Mobile medium — 480px */
+@media (max-width: 480px) {
+  .header {
+    width: 94%;
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .navList {
+    gap: 3px;
+    padding: 5px;
+    border-radius: 12px;
+  }
+
+  .navItem {
+    padding: 5px 10px;
+    font-size: 0.74rem;
+    border-radius: 8px;
+  }
+}
+
+/* Mobile small — 360px */
+@media (max-width: 360px) {
+  .header {
+    width: 96%;
+    padding: 8px 10px;
+    border-radius: 12px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .navItem {
+    padding: 5px 8px;
+    font-size: 0.70rem;
+  }
+
+  .count {
+    min-width: 15px;
+    height: 15px;
+    font-size: 9px;
+    padding: 0 4px;
+  }
 }
