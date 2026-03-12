@@ -2,7 +2,7 @@
 
 .page {
     font-family: 'Outfit', sans-serif;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -12,6 +12,8 @@
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
+
+    margin: 50px auto;
 }
 
 .page::before {
