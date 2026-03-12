@@ -2,7 +2,7 @@ import styles from './Deleted.module.css'
 import { useTodo } from '../hooks/useToDo'
 
 function Deleted() {
-    const { todoList } = useTodo()
+    const { todoList, arxivDelete } = useTodo()
     const deletedTodos = todoList.filter(todo => todo.Delete === true)
 
     return (
@@ -42,7 +42,7 @@ function Deleted() {
                                     <td className={styles.text}>{todo.name}</td>
                                     <td>
                                         <span className={styles.statusBadge}>
-                                            <button> O'chirilgan</button>
+                                            <button onClick={() => arxivDelete(todo.id)}> O'chirilgan</button>
                                         </span>
                                     </td>
                                 </tr>

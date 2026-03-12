@@ -28,6 +28,15 @@ export function useTodo() {
         })
     }
 
+    // arxivdelete todo
+    const arxivDelete = (id) => {
+        setTodoList(prev => {
+            const updated = prev.filter(todo => todo.id !== id)
+            localStorage.setItem('LIST', JSON.stringify(updated))
+            return updated
+        })
+    }
+
     // Todoni bajarildi / bajarilmadi holatiga o'tkazadi
     const toggleTodo = (id) => {
         setTodoList(prev => {
@@ -50,5 +59,5 @@ export function useTodo() {
         })
     }
 
-    return { todoList, addTodo, deleteTodo, toggleTodo, editTodo }
+    return { todoList, addTodo, deleteTodo, toggleTodo, editTodo, arxivDelete }
 }
